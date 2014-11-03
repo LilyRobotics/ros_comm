@@ -590,6 +590,8 @@ bool Recorder::scheduledCheckDisk() {
 }
 
 bool Recorder::checkDisk() {
+    return true;
+#if 0
 #if BOOST_FILESYSTEM_VERSION < 3
     struct statvfs fiData;
     if ((statvfs(bag_.getFileName().c_str(), &fiData)) < 0)
@@ -644,6 +646,7 @@ bool Recorder::checkDisk() {
     }
 #endif
     return true;
+#endif
 }
 
 bool Recorder::checkLogging() {

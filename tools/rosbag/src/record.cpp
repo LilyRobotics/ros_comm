@@ -150,7 +150,7 @@ rosbag::RecorderOptions parseOptions(int argc, char** argv) {
     }
     if (vm.count("lz4"))
     {
-      opts.compression = rosbag::compression::LZ4;
+      //opts.compression = rosbag::compression::LZ4;
     }
     if (vm.count("duration"))
     {

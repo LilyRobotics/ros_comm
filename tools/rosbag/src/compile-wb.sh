@@ -1,0 +1,3 @@
+/opt/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-g++ recorder.cpp record.cpp time_translator.cpp -o record -I../include -lboost_thread -lroscpp -lroslib -lboost_system -lrostime -lboost_thread -lboost_signals -lrospack -lxmlrpcpp -lboost_filesystem -lrosconsole -lxml2 -lz -lrosconsole_backend_interface -lrosconsole_log4cxx -llog4cxx -lapr-1 -laprutil-1 -lpython2.7 -ltinyxml -lexpat -lboost_regex -lboost_program_options -lrosbag -lrosbag_storage -lbz2 -luuid  -lroscpp_serialization -lcpp_common -lgdbm -ltopic_tools -lconsole_bridge  -lpthread /opt/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/arm-linux-gnueabihf/lib/libstdc++.a
+
+scp record root@10.10.10.1:

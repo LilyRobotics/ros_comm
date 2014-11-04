@@ -51,7 +51,7 @@
 #include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
-#include <boost/thread.hpp>
+#include <boost/thread/thread.hpp>
 #include <boost/thread/xtime.hpp>
 #include <boost/date_time/local_time/local_time.hpp>
 
@@ -462,7 +462,7 @@ void Recorder::doRecord() {
 #if BOOST_VERSION >= 105000
             boost::xtime_get(&xt, boost::TIME_UTC_);
 #else
-            boost::xtime_get(&xt, boost::TIME_UTC);
+            boost::xtime_get(&xt, boost::TIME_UTC_);
 #endif
             xt.nsec += 250000000;
             queue_condition_.timed_wait(lock, xt);
@@ -601,6 +601,8 @@ bool Recorder::scheduledCheckDisk() {
 }
 
 bool Recorder::checkDisk() {
+    return true;
+
 #if BOOST_FILESYSTEM_VERSION < 3
     struct statvfs fiData;
     if ((statvfs(bag_.getFileName().c_str(), &fiData)) < 0)
